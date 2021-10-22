@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="MAIN.css">
+  <title>웹사이트에 나만의 아이디어 접목하기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="intro_bg">
+      <div class="header">
+        <div class="title">
+          <form>
+            <a href="MAIN.html">ATOM을 이용한<br>나만의 웹사이트</a>
+          </form>
+        </div>
+        <ul class="nav">
+          <li><a href="MAIN.html">HOME</a></li>
+          <li><a href="https://cafe.naver.com/swengineers">CAFE</a></li>
+          <li><a href="REST.html">REST</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLYNmD6nHXpCYHzkh-fJ3CLij9YU6wIavs">resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="amount">
+      <li>
+        <div>
+          <div class="contents1">현재 날짜/시간</div>
+          <div class="result">
+            <div id="clock" style="color:black;">clock</div>
+            <script>
+              var Target = document.getElementById("clock");
+
+              function clock() {
+                var time = new Date();
+                var month = time.getMonth();
+                var date = time.getDate();
+                var day = time.getDay();
+                var week = ['일', '월', '화', '수', '목', '금', '토'];
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+                Target.innerText = `${month + 1}월 ${date}일 ${week[day]}요일 / ` + `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+              }
+              clock();
+              setInterval(clock, 1000); // 1초마다 실행
+            </script>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="contents1">교육 받은 기간</div>
+          <div class="result">
+            <script>
+              var now = new Date();
+              var then = new Date("august, 23,2021"); // 날짜 넣는곳
+              var gap = now.getTime() - then.getTime();
+              gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+              document.write("" + gap + "일")
+            </script>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="contents1">교육 남은 기간</div>
+          <div class="result">
+            <script>
+              var now = new Date();
+              var then = new Date("january 25,2022"); // 날짜 넣는곳
+              var gap = now.getTime() - then.getTime();
+              gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+              document.write("D" + gap + "일")
+            </script>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <table class="chart">
+      <caption>
+        쉼터
+      </caption>
+      <tr style="background-color:#1e1f21;">
+
+        <td style="margin-right:10px;">
+          <iframe width="480" height="300" src="https://www.youtube.com/embed/flODytOZdDI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </td>
+        <td>
+          <h2></h2>
+          <img src="이미지/좋은글귀.png" width="300" height="480">
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <strong>
+      처음으로 제작한<br>
+      간단한 웹사이트
+    </strong>
+    <p>
+      참고자료 : Youtube(타모디자인TOMO)<br>
+      피드백 : giyeok@naver.com
+    </p>
+  </div>
+
+
+
+</html>

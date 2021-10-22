@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="MAIN.css">
+  <title>웹사이트에 나만의 아이디어 접목하기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="intro_bg">
+      <div class="header">
+        <div class="title">
+          <form>
+            <a href="MAIN.html">ATOM을 이용한<br>나만의 웹사이트</a>
+          </form>
+        </div>
+        <ul class="nav">
+          <li><a href="MAIN.html">HOME</a></li>
+          <li><a href="https://cafe.naver.com/swengineers">CAFE</a></li>
+          <li><a href="REST.html">REST</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLYNmD6nHXpCYHzkh-fJ3CLij9YU6wIavs">resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="amount">
+      <li>
+        <div>
+          <div class="contents1">현재 날짜/시간</div>
+          <div class="result">
+            <div id="clock" style="color:black;">clock</div>
+            <script>
+              var Target = document.getElementById("clock");
+
+              function clock() {
+                var time = new Date();
+                var month = time.getMonth();
+                var date = time.getDate();
+                var day = time.getDay();
+                var week = ['일', '월', '화', '수', '목', '금', '토'];
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+                Target.innerText = `${month + 1}월 ${date}일 ${week[day]}요일 / ` + `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+              }
+              clock();
+              setInterval(clock, 1000); // 1초마다 실행
+            </script>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="contents1">교육 받은 기간</div>
+          <div class="result">
+            <script>
+              var now = new Date();
+              var then = new Date("august, 23,2021"); // 날짜 넣는곳
+              var gap = now.getTime() - then.getTime();
+              gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+              document.write("" + gap + "일")
+            </script>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="contents1">교육 남은 기간</div>
+          <div class="result">
+            <script>
+              var now = new Date();
+              var then = new Date("january 25,2022"); // 날짜 넣는곳
+              var gap = now.getTime() - then.getTime();
+              gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+              document.write("D" + gap + "일")
+            </script>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <table class="chart">
+      <caption>
+        프로그래밍 언어의 종류
+      </caption>
+      <tr>
+        <td>
+          <img src="이미지/JAVA.png" width="400" height="250">
+
+        </td>
+        <td>
+          <h2>JAVA란?</h2>
+
+          자바는 썬 마이크로시스템즈의 제임스 고슬링과<br>
+          다른 연구원들이 개발한 객체 지향적 프로그래밍<br>
+          언어이다. 처음에는 가전제품 내에 탑재해 동작하는<br>
+          프로그램을 위해 개발했지만 현재 웹 애플리케이션<br>
+          개발에 가장 많이 사용하는 언어 가운데 하나이고,<br>
+          모바일 기기용 소프트웨어 개발에도 널리 사용하고 있다.
+
+        </td>
+      </tr>
+    </table>
+    <div class="etc">
+      다른 종류의 프로그래밍 언어
+    </div>
+    <table class="chart2">
+      <tr>
+        <td>
+          <h2 align="center" style="color:#f8e86d; text-shadow: 0px 0px 5px #fff;">파이썬</h2>
+          <a href="파이썬.html"><img src="이미지/파이썬.png" width="400" height="250"></a>
+        </td>
+        <td>
+          <h2 align="center" style="color:#f8e86d; text-shadow: 0px 0px 5px #fff;">R</h2>
+          <a href="R.html"><img src="이미지/R.png" width="400" height="250"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2 align="center" style="color:#f8e86d; text-shadow: 0px 0px 5px #fff;">오라클</h2>
+          <a href="오라클.html"><img src="이미지/오라클.png" width="400" height="250"></a>
+        </td>
+        <td>
+          <h2 align="center" style="color:#f8e86d; text-shadow: 0px 0px 5px #fff;">HTML</h2>
+          <a href="MAIN.html"><img src="이미지/html이미지.png" width="400" height="250" border="0"></a>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="footer">
+    <strong>
+      처음으로 제작한<br>
+      간단한 웹사이트
+    </strong>
+    <p>
+      참고자료 : Youtube(타모디자인TOMO)<br>
+      피드백 : giyeok@naver.com
+    </p>
+  </div>
+
+
+
+</html>
